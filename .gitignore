@@ -1,0 +1,83 @@
+# Better French Max - Git Ignore File
+
+# 🔒 SENSITIVE DATA - NEVER COMMIT THESE
+02_Scripts/config.py
+*.env
+.env*
+
+# 🗃️ DATA FILES - Too large for GitHub
+04_Data_Output/
+05_Logs/
+*.json
+*.csv
+*.log
+
+# 🍎 macOS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 🔧 Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# 💻 IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 📦 Node.js (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🔄 Temporary Files
+*.tmp
+*.temp
+*.cache
+
+# 📊 Large Files
+*.mp4
+*.avi
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.zip
+*.tar.gz 
