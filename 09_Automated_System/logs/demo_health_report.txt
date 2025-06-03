@@ -1,0 +1,14 @@
+🔍 Better French Max - System Health Report
+==================================================
+📅 Generated: 2025-06-02 21:47:07
+⚡ Status: WARNING
+
+💻 System Resources:
+   CPU Usage: 0.0%
+   Memory Usage: 77.9%
+   Disk Usage: 17.9%
+   Uptime: 0.0 hours
+
+⚠️ Issues Detected:
+   • High CPU usage: 97.2%
+   • Some components not operational

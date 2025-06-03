@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Data Loading</title>
+</head>
+<body>
+    <h1>Debug: Data Loading Test</h1>
+    <div id="debug-output"></div>
+    
+    <script>
+    async function testDataLoading() {
+        try {
+            console.log('🔍 Testing data loading...');
+            
+            const response = await fetch('current_articles.json');
+            console.log('📡 Response status:', response.status);
+            
+            if (!response.ok) {
+                throw new Error(`Failed to load: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('📄 Data loaded:', data);
+            console.log('📊 Articles count:', data.articles ? data.articles.length : 0);
+            
+            const debugDiv = document.getElementById('debug-output');
+            debugDiv.innerHTML = `
+                <h2>✅ Success!</h2>
+                <p><strong>Articles found:</strong> ${data.articles ? data.articles.length : 0}</p>
+                <p><strong>Metadata:</strong> ${JSON.stringify(data.metadata, null, 2)}</p>
+                <h3>First Article Test:</h3>
+                ${data.articles && data.articles[0] ? `
+                    <p><strong>Title:</strong> ${data.articles[0].title}</p>
+                    <p><strong>Original Title:</strong> ${data.articles[0].original_article_title}</p>
+                    <p><strong>Explanations:</strong> ${Object.keys(data.articles[0].contextual_title_explanations || {}).length} items</p>
+                    <p><strong>Published:</strong> ${data.articles[0].published_date}</p>
+                ` : '<p>❌ No articles found</p>'}
+            `;
+            
+        } catch (error) {
+            console.error('❌ Error:', error);
+            document.getElementById('debug-output').innerHTML = `
+                <h2>❌ Error</h2>
+                <p>${error.message}</p>
+            `;
+        }
+    }
+    
+    testDataLoading();
+    </script>
+</body>
+</html> 
